@@ -122,14 +122,16 @@ GibbsMotifFinder(seqs, k, seed, max_iterations, ic_threshold, convergence_iterat
 Description of the team's learning points
 
 # Struggles
-Description of the stumbling blocks the team experienced
+In terms of the algorithm, the part we struggled with the most was the socring function and dealing with negative numbers for our probabilities. After some discussion and research, we came across the softmax equation, which involved using the power `e` to make sure all the numbers were positive. After this was discussed in class, and we realized we were using `log2` in the scoring function, we changed this to use the power of 2 instead. We also struggled with the data preparation that we worked on during the second week of the assignment. Using `MACS2` peak calling and then querying a reference genome based on the BED file produced was something new to us. We used the tutorial provided during class to familiarize ourselves with the tool, and adapted to our use case. We were able to extract ~500 sequences from the peaks, which we then fed into our algorithm. However, we noticed that the motif the algorithm was identifying was full of `A` and `T` bases, which seemed odd to us. We thought it might have been identyfing poly-A or -T tails, instead of the actual motif. After some tweaking and playing around, we were not able to make it work, so we decided to test our algorithm with the preprocessed CDS data extracted from the .gff file. While we weren't successful, it was a learning experience to familiarize ourselves with a new tool and bioinformatics process.
 
 # Personal Reflections
 ## Group Leader
 Group leader's reflection on the project
 
-## Other member
+## Other members
 Sneha- Spencer and Marcos were both great to work with. We were able to meet a handful of times throughout the two weeks to plan and implement our code rather than using a divide and conquer strategy. The planning phase was especially helpful to make sure we were all on the same page about what we had learned in class and what needed to be done for our project and specific functions.  
+
+Marcos - this was a challenging but very rewarding project. and both Sneha and Spencer were very helpful to make this work as well as it did. As mentioned, we met several times throughout the two weeks, during which we thought out and planned the outline of the algorithm together, as well as doing the coding at the same time. This worked really well, as it allowed all of us to soak in the content and help each other when there were doubts. Once we got that working, we tried to use `MACS2` for peak calling to prepare a more curated dataset. We put in a lot of time to figure out how the tool worked and how to use it for our project, but ended up not having a successful dataset. Despite that, I think it was a very valuable experience to learn how to use a new tool. 
 
 # Generative AI Appendix
 As per the syllabus
