@@ -101,6 +101,8 @@ For the second part of the project, using `np.logaddexp()` was a litte confusing
 ## Group Leader
 Spencer: I enjoyed this project, having no set structure and guidance as I think it emphasized the need for teamwork and made us leverage the skills we already have. I am looking forward to the following weeks working with Marcos and Sneha!
 
+I found project 9 to be a bit easier to implement, but an apt follow up to viterbi. I appreciate our object oriented approach for project 8 as I think it set us up for success in this project. We ended up using initialization methods used in viterbi for our forward and backward algorithms, which made the impact of this approach clear!
+
 ## Other member
 Sneha: Spencer and Marcos are both great partners and it was easy to meet and plan our implementation. We spent a good amount of time on the planning stage to make sure we understood each step of the algorithm and the scope of each of our functions. I think the most difficult concept for me was the traceback, specifically keeping track of the indices and mentally tracking that i and the actual matrix column are always one apart. It was also a bit intimidating at first not having a structured notebook and making sure that our code was implemented in such a way that we could add on to it in the next few weeks, but I think our group handled that well in planning. 
 
