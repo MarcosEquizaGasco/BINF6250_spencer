@@ -76,14 +76,12 @@ Class HMM(emission_prob, transition_prob, initial_prob):
         call forward algorithm with reversed observations
         return matrix and overall probability
 
-    FUNCTION forward_backward(self, observations, index):
+    FUNCTION forward_backward(self, observations):
 
         call forward algorithm
         call backward algorithm
         calculate average overall probability from forward and backward
-        for each state:
-            access appropriate index at forward and backward matrices
-            calculate marginal probability for state (fk + bk - overall_probability)
+        calculate marginal probability matrix for each state (fk + bk - overall_probability) in vector form
         return marginal probabilities
 ```
 
