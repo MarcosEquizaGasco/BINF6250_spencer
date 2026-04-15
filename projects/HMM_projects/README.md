@@ -134,29 +134,43 @@ while max iterations not reached:
 ```
 
 # Successes
-There were a few key successes for this weeks project. We felt confident in our use of object oriented programming and we feel aptly set up to continue to build upon the objects we have created. Another highlight is the group work itself, we were able meet and discuss the algorithm conceptually, plan, and implement in an efficient manner. We ended up with a implementation we feel confident in moving forward with. 
+PROJECT 08 - VITERBI: There were a few key successes for this weeks project. We felt confident in our use of object oriented programming and we feel aptly set up to continue to build upon the objects we have created. Another highlight is the group work itself, we were able meet and discuss the algorithm conceptually, plan, and implement in an efficient manner. We ended up with a implementation we feel confident in moving forward with. 
 
-For the second part, we came in with a good understanding of the forward, backward, and forward-backward algorithms. Our planning stage went well, as we were able to write detailed psuedocode for each function. This made the implementation very straightforward. We were also able to integrate our functions from this week into our HMM class quite easily and pull from the work we had done for viterbi. 
+PROJECT 09 - FORWARD/BACKWARD: For the second part, we came in with a good understanding of the forward, backward, and forward-backward algorithms. Our planning stage went well, as we were able to write detailed psuedocode for each function. This made the implementation very straightforward. We were also able to integrate our functions from this week into our HMM class quite easily and pull from the work we had done for viterbi.
+
+PROJECT 10 - BAUM-WELCH: 
+
 
 # Struggles
-We initially struggled with the structure, or lack thereof, for this project. Setting up a notebook, and tackling this algorithm starting with nothing but our conceptual understanding required some teamwork and open discussion. We also had some trouble with the `_traceback()` function, keeping track of the correct column indices and what states to add to the best path. In paper, looking at the diagram in class, it seemed pretty straight-forward, but when we started coding it was a little more challenging. However, after thinking about it and osme trial-and-error, we were able to get it to work. 
+PROJECT 08 - VITERBI: We initially struggled with the structure, or lack thereof, for this project. Setting up a notebook, and tackling this algorithm starting with nothing but our conceptual understanding required some teamwork and open discussion. We also had some trouble with the `_traceback()` function, keeping track of the correct column indices and what states to add to the best path. In paper, looking at the diagram in class, it seemed pretty straight-forward, but when we started coding it was a little more challenging. However, after thinking about it and osme trial-and-error, we were able to get it to work. 
 
-For the second part of the project, using `np.logaddexp()` was a litte confusing at first. We weren't sure if using a cumulative score counter and repeatedly adding using the function would cause issues, and were struggled identifying when we were in log-space and when we weren't. However, after consulting the official documentation and some trial and error, we got it to work as expected. 
+PROJECT 09 - FORWARD/BACKWARD: For the second part of the project, using `np.logaddexp()` was a litte confusing at first. We weren't sure if using a cumulative score counter and repeatedly adding using the function would cause issues, and were struggled identifying when we were in log-space and when we weren't. However, after consulting the official documentation and some trial and error, we got it to work as expected. 
+
+PROJECT 10 - BAUM-WELCH: 
 
 # Personal Reflections
 ## Group Leader
-Spencer: I enjoyed this project, having no set structure and guidance as I think it emphasized the need for teamwork and made us leverage the skills we already have. I am looking forward to the following weeks working with Marcos and Sneha!
+Spencer: 
+PROJECT 08 - VITERBI: I enjoyed this project, having no set structure and guidance as I think it emphasized the need for teamwork and made us leverage the skills we already have. I am looking forward to the following weeks working with Marcos and Sneha!
 
-I found project 9 to be a bit easier to implement, but an apt follow up to viterbi. I appreciate our object oriented approach for project 8 as I think it set us up for success in this project. We ended up using initialization methods used in viterbi for our forward and backward algorithms, which made the impact of this approach clear!
+PROJECT 09 - FORWARD/BACKWARD: I found project 9 to be a bit easier to implement, but an apt follow up to viterbi. I appreciate our object oriented approach for project 8 as I think it set us up for success in this project. We ended up using initialization methods used in viterbi for our forward and backward algorithms, which made the impact of this approach clear!
+
+PROJECT 10 - BAUM-WELCH:
 
 ## Other member
-Sneha: Spencer and Marcos are both great partners and it was easy to meet and plan our implementation. We spent a good amount of time on the planning stage to make sure we understood each step of the algorithm and the scope of each of our functions. I think the most difficult concept for me was the traceback, specifically keeping track of the indices and mentally tracking that i and the actual matrix column are always one apart. It was also a bit intimidating at first not having a structured notebook and making sure that our code was implemented in such a way that we could add on to it in the next few weeks, but I think our group handled that well in planning. 
+Sneha: 
+PROJECT 08 - VITERBI: Spencer and Marcos are both great partners and it was easy to meet and plan our implementation. We spent a good amount of time on the planning stage to make sure we understood each step of the algorithm and the scope of each of our functions. I think the most difficult concept for me was the traceback, specifically keeping track of the indices and mentally tracking that i and the actual matrix column are always one apart. It was also a bit intimidating at first not having a structured notebook and making sure that our code was implemented in such a way that we could add on to it in the next few weeks, but I think our group handled that well in planning. 
 
-After understanding and implementing viterbi, I thought the second week of this project seemed pretty straightforward. One thing I struggled with conceptually at first was where the initial probabilities get added for the backwards algorithm, however after going through psuedocode, this became much more clear. I am proud of how we set up our project from the first week because we were able to intergrate our code for this week and use functions from last week pretty seamlessly. 
+PROJECT 09 - FORWARD/BACKWARD: After understanding and implementing viterbi, I thought the second week of this project seemed pretty straightforward. One thing I struggled with conceptually at first was where the initial probabilities get added for the backwards algorithm, however after going through psuedocode, this became much more clear. I am proud of how we set up our project from the first week because we were able to intergrate our code for this week and use functions from last week pretty seamlessly. 
 
-Marcos: I think our team worked very well given the lack of structure for this project. Just having a general idea of what we had to implement, with a few given data structures was a little daunting at first. However, during our planning meetings we were able to narrow down what the problem we had to implement was, and then how to actually do it. Having such a clear plan made the coding much easier. I really like how we decided to go with the class object approach, which allows us to have different methods and can continue to expand it with the coming weeks' projects. I think the hardest part was the `_traceback()` function, as I had a pretty solid idea of how it worked based on the table we saw in class, but it was challenging to translate it into actual code, keeping track of the correct indices. Despite that, we were able to overcome this and implemented the Viterbi algorithm correctly.
+PROJECT 10 - BAUM-WELCH:
 
-The second phase of the project was, in my opinion, slightly easier. Conceptually, the forward algorithm was intuitive and easy to implement. The only thing we really struggled with was understanding how to use `np.logaddexp()` correctly, as we got slightly confused about when we were in log-space and when we weren't. After consulting the official documentation and some trial and error, we got it to work as expected. 
+Marcos: 
+PROJECT 08 - VITERBI: I think our team worked very well given the lack of structure for this project. Just having a general idea of what we had to implement, with a few given data structures was a little daunting at first. However, during our planning meetings we were able to narrow down what the problem we had to implement was, and then how to actually do it. Having such a clear plan made the coding much easier. I really like how we decided to go with the class object approach, which allows us to have different methods and can continue to expand it with the coming weeks' projects. I think the hardest part was the `_traceback()` function, as I had a pretty solid idea of how it worked based on the table we saw in class, but it was challenging to translate it into actual code, keeping track of the correct indices. Despite that, we were able to overcome this and implemented the Viterbi algorithm correctly.
+
+PROJECT 09 - FORWARD/BACKWARD: The second phase of the project was, in my opinion, slightly easier. Conceptually, the forward algorithm was intuitive and easy to implement. The only thing we really struggled with was understanding how to use `np.logaddexp()` correctly, as we got slightly confused about when we were in log-space and when we weren't. After consulting the official documentation and some trial and error, we got it to work as expected.
+
+PROJECT 10 - BAUM-WELCH:
 
 # Generative AI Appendix
 As per the syllabus
