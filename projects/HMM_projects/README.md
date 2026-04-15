@@ -85,6 +85,54 @@ Class HMM(emission_prob, transition_prob, initial_prob):
         return marginal probabilities
 ```
 
+Pseudocode for Baum-Welch algorithm:
+
+```
+# Baum-Welch
+
+# INITIALIZATION:
+# Randomize transition and emission probabilities with pseudocounts
+
+# EXPECTATION:
+# Call forward/backward algorithm for each sequence to get estimated probabilities for each state
+# Calculate/update expected counts based of state probabilities for each sequence
+
+# MAXIMIZATION:
+# Update transition and emission probabilities based on expected counts
+
+# Repeat expectation and maximiaztion steps until convergence or iteration threshhold reached
+# parameterize convergence threshold, frequency of checking convergence, and max iterations
+
+
+random initialization of probabilities using pseudocounts
+
+while max iterations not reached:
+    for each seq in sequences:
+        # Make this a method -> self.expectation
+        initialize empty path list
+        call forward_backward
+        for each nucleotide in seq: 
+            take max val of forward backward to get most probable state at position
+            append max to ongoing path list
+        based on state list and obs in seq, calc expected counts
+        transition expected counts = dict(state1, dict(state2, transition count))
+        emission expected counts = dict(state, dict(emission, emission count))
+    
+        # Make this a method -> self.maximization
+        convert expected counts into probabilities
+        update probability to interim variable
+        update HMM using interim variable
+    
+        # check for convergence 
+        if iterations = some multiple of 100
+            check for convergence with log-likelihood probability
+            take snapshot of interim variable for comparison 
+            if  convergence:
+                up convergence counter
+                if convergence counter meets true convergence metric
+                return interim variable
+```
+
 # Successes
 There were a few key successes for this weeks project. We felt confident in our use of object oriented programming and we feel aptly set up to continue to build upon the objects we have created. Another highlight is the group work itself, we were able meet and discuss the algorithm conceptually, plan, and implement in an efficient manner. We ended up with a implementation we feel confident in moving forward with. 
 
