@@ -178,7 +178,8 @@ PROJECT 08 - VITERBI: I think our team worked very well given the lack of struct
 
 PROJECT 09 - FORWARD/BACKWARD: The second phase of the project was, in my opinion, slightly easier. Conceptually, the forward algorithm was intuitive and easy to implement. The only thing we really struggled with was understanding how to use `np.logaddexp()` correctly, as we got slightly confused about when we were in log-space and when we weren't. After consulting the official documentation and some trial and error, we got it to work as expected.
 
-PROJECT 10 - BAUM-WELCH:
+PROJECT 10 - BAUM-WELCH: The Baum-Welch algorithm was conceptually more difficult than the past two algorithms. While the example from class seemed somewhat straight-forward, we did some more research to complement our understanding, and found there were multiple variations of the algorithm. We decided to implement the one we learned in class, which used the Forward-Backward algorithm matrix to assign a "hard" path of states to each observation to calculate the expected counts. Once we implemented it, it was difficult to evaluate whether our generated probabilities were actually correct, or if they were just non-sense values. We decided to ask Claude to provide us 10 sequences that were very clearly either CpG islands or background to test this. After running the algorithm with those sequences, our resulting probabilities did reflect this distinction, with the CpG island state being almost exclusively C and G, and the background having a more diverse mix. The transitions also were coherent, as there was a small but significant chance of transitioning from background, but an almost zero chance of moving away from a CpG island. These results were very convincing and made us confident in our implementation. 
 
 # Generative AI Appendix
-As per the syllabus
+As per the syllabus.
+Used Claude to provide 10 sequences that were CpG islands or background to test Baum-Welch. 
