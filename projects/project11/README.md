@@ -131,14 +131,14 @@ profile HMM -> inherit HMM class
 ```
 
 # Successes
-Description of the team's learning points
+The main focus of the group for this project was planning the functions for implementing a profile HMM by extending an existing HMM class. We did not get to fully implementing the code, but in ```HMM.py``` it is clear we have planned each potential function and its output. Our first few meetings entailed discussing and making sure we understood the concept of profile HMMs. We all went through the html provided on the canvas page, walking through each step together, discussing what is being done, and what potential code would look like. We approached the algorithm by each step, planning and writing pseudocode for each. Although we did not finish all of the code, I think what we did accomplish, and the way we went about the project, significantly boosted our understanding of the concept 
 
 # Struggles
-Description of the stumbling blocks the team experienced
+This project challenged us conceptually, requiring us to understand and extend code that we did not write. A significant portion of our planning was discussing the concepts and navigating the html link on the canvas page. We initially struggled with understanding what states to assign where, what defines a deletion vs insertion, but open dialogue and using eachother as resources helped us over this hump. 
 
 # Personal Reflections
 ## Group Leader
-Group leader's reflection on the project
+Spencer: I was challenged for this project, struggling to understand the difference between assigning residue-specific states and position-specific states, and using this step to inform how to make the profile HMM. I think the planning aspectc of this project went well, and we worked really well together as a team. We made sure everyone was on board conceptually before moving on to pseudocode and writing out the functions for each step. 
 
 ## Other member
 Sneha:
