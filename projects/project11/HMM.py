@@ -617,70 +617,52 @@ class HMM(BaseHMM):
 
 class pHMM(HMM):
 
-    def __init__(self):
-
-        #alphabet <- letter representations of amino acids
-        # pseudocount <- 1
-        # self.emit_probs = {}    
-        # self.trans_probs = {}     
-        # self.begin_probs = {}
-
-        pass
-
     def read_fasta(self, path):
 
         # path = path_to_fasta
-
-        #read fasta
-
-        # return self.MSA
-
+        # Read fasta file by lines
+        # Skip headers
+        # Add aligned sequences to list/matrix
+        # return and create self.MSA
         pass
 
     def assign_state(self):
 
-        # for sequence in self.MSA
+        # for each column (position) in self.MSA
+            # Assign state to column based on alignment
+                # state = match if >50% aligned
+                # state = insertion if <50% aligned
 
-            # state = match if >50% aligned
-            # state = insertion if <50% aligned
-
-        # return assignment matrix
-
+        # return assignment matrix/list
         pass
 
     def label_position(self):
+        
+        # for each sequence in MSA
+            # for each position in sequence 
+                # Label position with residue and state
+                    # match or insertion if there is a residue present
+                    # match if global assignment is match
+                    # insertion if global assignment is insertion
+                    # deletion if '-' or symbol denoting gap
 
-        # for each position in sequence in MSA 
-            # match or insertion if there is a residue present
-            # match if global assignment is match
-            # insertion if global assignment is insertion
-            # deletion if '-' or symbol denoting gap
-
-        # return array (row = sequence, col = position) with labels
-
+        # return array/matrix (row = sequence, col = position) with labels
         pass
 
     def background_dist(self):
 
-
-        # take all observed residues and calc prop for each residue
-
-        #     make empty background_dist_dict
-
-        #     for each residue: 
-
-        #         background_dist = count of (residue + pseudocount) / (total num of residues observed + 20 * pseudocount)
-                
-        #         bacground_dist_dict[residue] = background_dist
-
+        # take all observed residues and calculate prob for each residue
+            # make empty background_dist_dict
+            # for each residue: 
+                # background_dist = (count of residue + pseudocount) / (total num of residues observed + 20 * pseudocount)
+                # bacground_dist_dict[residue] = background_dist
         # return background_dist_dict
-
         pass
 
     def compute_emissions(self):
 
-
-        #for state_index, residue_index in enumerate(self.label_position())
+        # Use matrix with labeled positions for each sequence (self.label_position())
+        # for state_index, residue_index in enumerate(labeled_martrix)
             
         
             # if state assignment is a match, execute build_emissions_from_msa for that column using only aligned residues (skipping gaps)
@@ -706,156 +688,38 @@ class pHMM(HMM):
                 
             #         return self.emissions
 
-
             #     if state assignment is not match, skip
-
             pass
     
     def calc_trans_prob(self):
 
-
         # initialize with transition_counts with valid transitions: 
-        #     M_i -> M_i+1
-        #     M_i -> I_i 
-        #     M_i -> D_i+1
-        #     ...
+            # M_i -> M_i+1
+            # M_i -> I_i 
+            # M_i -> D_i+1
+            # ...
 
         # for each labeled state in labeled_state_matrix.shape()
-        #     curr_state <- current labeled state
-        #     next_state <- next state in labeled state matrix
+            # curr_state <- current labeled state
+            # next_state <- next state in labeled state matrix
 
-        #     if curr_state to next_state transition is in transition count dictionary: 
-        #         increment counter for that transition by 1
+            # if curr_state to next_state transition is in transition count dictionary: 
+                # increment counter for that transition by 1
 
         
         # for each key in the dictionary (original labeled state): 
-        #     sum all counts to get total
-        #     for each key (next state): 
-        #         value (transition count) + psuedocount / total counts + 20 * psuedocount
-
+            # sum all counts to get total
+            # for each key (next state): 
+                # value (transition count) + psuedocount / total counts + 20 * psuedocount
         # return self.trans_probs
         pass
 
 
-    def evaluate(self):
-                
+    def evaluate(self, sequences):
 
         # for each seq in sequences: 
-        #     prob = pHMM.forward() to get overall prob
-        #     path = pHMM.viterbi() to get optimal state path for M, D, I
-
+            # prob = pHMM.forward() to get overall prob
+            # path = pHMM.viterbi() to get optimal state path for M, D, I
         # print prob and path variables 
 
-        pass
-
-    
-
-
-
-'''
-profile HMM -> inherit HMM class
-
-    Def __init__(self)
-
-        # alphabet <- letter representations of amino acids
-        # pseudocount <- 1
-        # self.emit_probs = {}    
-        # self.trans_probs = {}     
-        # self.begin_probs = {}
-
-    FUNCTION read in fasta for MSA
-
-    FUNCTION assign state to each postion column (match or insertion)
-
-        match if >50% aligned
-        insertion if <50% aligned
-
-    FUNCTION label each position in each sequence with state (match, deletion, insertion)
-
-        match or insertion if there is a residue present
-            match if global assignment is match
-            insertion if global assignment is insertion
-
-        deletion if '-' or symbol denoting gap
-
-
-    FUNCTION create background distribution (input MSA) # could be in init of profile HMM
-
-        take all observed residues and calc prop for each residue
-
-            make empty background_dist_dict
-
-            for each residue: 
-
-                background_dist = count of (residue + pseudocount) / (total num of residues observed + 20 * pseudocount)
-                
-                bacground_dist_dict[residue] = background_dist
-
-        return background_dist_dict
-
-
-    FUNCTION compute emissions (MSA)
-
-    
-
-        for state_index, residue_index in MSA state assignment table.enumerate()
-            
-        
-            if state assignment is a match, execute build_emissions_from_msa for that column using only aligned residues (skipping gaps)
-                residues = [seq[residue_index] for seq in msa 
-                if seq[residue_index] != '-']
-
-                def build_emissions(self, residues, state_index, emissions):
-                        
-                    # Count frequencies
-                    counts = {}
-                    for r in self.alphabet:
-                        counts[r] = residues.count(r)
-                    total = sum(counts.values())
-                    
-                    # Compute emission probabilities for match state
-                    self.emissions[f'M{state_index}'] = {
-                        r: counts[r] + self.pseudocount / total + 20 * self.pseudocount 
-                        for r in self.alphabet
-                    }
-                    
-                    # Insertion state uses background distribution
-                    emissions[f'I{state_index}'] = self.background_dist()
-                
-                    return self.emissions
-
-
-                if state assignment is not match, skip
-
-
-    FUNCTION calculate transition prob
-
-        initialize with transition_counts with valid transitions: 
-            M_i -> M_i+1
-            M_i -> I_i 
-            M_i -> D_i+1
-            ...
-
-        for each labeled state in labeled_state_matrix.shape()
-            curr_state <- current labeled state
-            next_state <- next state in labeled state matrix
-
-            if curr_state to next_state transition is in transition count dictionary: 
-                increment counter for that transition by 1
-
-        
-        for each key in the dictionary (original labeled state): 
-            sum all counts to get total
-            for each key (next state): 
-                value (transition count) + psuedocount / total counts + 20 * psuedocount
-
-        
-    FUNCTION evaluate (sequences)
-
-        for each seq in sequences: 
-            prob = pHMM.forward() to get overall prob
-            path = pHMM.viterbi() to get optimal state path for M, D, I
-
-            print prob and path variables 
-
-'''     
+        pass  
